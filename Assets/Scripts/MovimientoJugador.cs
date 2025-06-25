@@ -6,12 +6,13 @@ public class MovimientoJugador : MonoBehaviour
     public Vector2 entrada;
     Rigidbody2D rb;
     public float velocidad = 5f;
-
+    private Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -21,10 +22,34 @@ public class MovimientoJugador : MonoBehaviour
     }
 
     public void Movimiento(InputAction.CallbackContext contexto){
-         
 
-         entrada = contexto.ReadValue<Vector2>(); 
-         Debug.Log("Contexto " + entrada);
+        Vector2 valorEntrada = contexto.ReadValue<Vector2>();
 
+        animator.SetBool("estaCaminando", true);
+
+        // Determinar el eje dominante
+        if (Mathf.Abs(valorEntrada.x) > Mathf.Abs(valorEntrada.y))
+        {
+            // Movimiento horizontal
+            entrada = new Vector2(Mathf.Sign(valorEntrada.x), 0);
+        }
+        else if (Mathf.Abs(valorEntrada.y) > 0)
+        {
+            // Movimiento vertical
+            entrada = new Vector2(0, Mathf.Sign(valorEntrada.y));
+        }
+        else
+        {
+            entrada = Vector2.zero;
+        }
+
+        //asignar valores a los parametros de entradaX y entrdadY
+
+        animator.SetFloat("EntradaX", entrada.x);
+        animator.SetFloat("EntradaY", entrada.y);
+
+        if(contexto.canceled){
+            animator.SetBool("estaCaminando", false);
+        }
     }    
 }
