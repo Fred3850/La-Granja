@@ -23,7 +23,7 @@ public class Movimientoporzona : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, destino, velocidad * Time.deltaTime);
 
         Vector2 direccion = posicionInicial - destino;
-        Debug.log("Direccion: " + direccion.x);
+        Debug.Log("Direccion:" + direccion.x);
 
         if(direccion.x >=0){
             sr.flipX = true; //ver a la izquierda
@@ -32,14 +32,13 @@ public class Movimientoporzona : MonoBehaviour
         }
 
 
-        if(Vector2. Distance(transform.positions, destino) < 0.1f){
+        if(Vector2.Distance(transform.position, destino) < 0.1f){
             NuevoDestino();
-            posicionInicial = transform.posotion;
+            posicionInicial = transform.position;
         }
     
 
     }
-
 
 
     void NuevoDestino(){
