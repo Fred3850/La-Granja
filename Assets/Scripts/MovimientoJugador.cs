@@ -7,6 +7,7 @@ public class MovimientoJugador : MonoBehaviour
     Rigidbody2D rb;
     public float velocidad = 5f;
     private Animator animator;
+    public GameObject trigoPreFab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,5 +52,19 @@ public class MovimientoJugador : MonoBehaviour
         if(contexto.canceled){
             animator.SetBool("estaCaminando", false);
         }
-    }    
+    }   
+
+    public void SembrarTrigo(InputAction.CallbackContext contexto){
+        if(contexto.started){
+            Instantiate(trigoPreFab, transform.position, Quaternion.identity);
+        }
+
+    }
+
+    public void OnTriggerEnter2D(Collider2D colision){
+        if(colision.CompareTag("Huevo")){
+            Destroy(colision.gameObject);
+            //Debug.Log("Colision con Huevo");
+        }
+    } 
 }
