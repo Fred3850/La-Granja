@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class GameManagment : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GameManagment instancia;
-    int contadorHuevo;
+    public static GameManager instance;
+    public int contadorHuevo;
 
     void Awake(){
 
-        if(instancia == null){
-            instancia = this;
+        if(instance == null){
+            instance = this;
         }else {
             Destroy(gameObject);
         }

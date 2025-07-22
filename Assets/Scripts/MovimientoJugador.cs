@@ -8,6 +8,7 @@ public class MovimientoJugador : MonoBehaviour
     public float velocidad = 5f;
     private Animator animator;
     public GameObject trigoPreFab;
+    //public GameObject tomatePreFab;//
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,6 +61,8 @@ public class MovimientoJugador : MonoBehaviour
         }
 
     }
+
+    
 
     public void OnTriggerEnter2D(Collider2D colision){
         if(colision.CompareTag("Huevo")){
