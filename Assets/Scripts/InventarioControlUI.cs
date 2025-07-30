@@ -18,7 +18,7 @@ public class InventarioControlUI : MonoBehaviour
 
         if(GameManager.instance.contadorHuevo != huevosPrevios){
             huevosPrevios = GameManager.instance.contadorHuevo;
-            labelHuevos.text = $"Huevos: {huevosPrevios}";
+            labelHuevos.text = huevosPrevios.ToString();
         }        
     }
 }

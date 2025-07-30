@@ -1,4 +1,9 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/InventarioStyle.uss?fileID=7433441132597879392&amp;guid=6b8e46d08f59ef244a86201ef1fb67c1&amp;type=3#InventarioStyle" />
-    <ui:Label text="Huevos: 0" name="labelHuevos" />
+    <ui:VisualElement name="barra-recursos" style="flex-grow: initial; flex-direction: row; align-content: auto;">
+        <ui:VisualElement name="recursoshuevos" class="recursos" style="flex-grow: initial; flex-direction: row; align-items: auto; align-content: auto; color: rgb(55, 55, 55); -unity-background-image-tint-color: rgb(81, 81, 81); background-color: rgb(218, 165, 32); border-left-color: rgb(250, 250, 210); border-right-color: rgb(250, 250, 210); border-top-color: rgb(250, 250, 210); border-bottom-color: rgb(250, 250, 210); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;">
+            <ui:VisualElement name="iconoHuevos" style="flex-grow: 1; width: 16px; height: 16px; background-image: url(&quot;project://database/Assets/Sprites/Personajes/Egg_And_Nest.png?fileID=6373942132520359487&amp;guid=0ef9b0d4070875b46b7f9a0c8cd7c68f&amp;type=3#Egg_And_Nest_0&quot;); align-items: stretch;" />
+            <ui:Label name="labelHuevos" text="0" class="numeros" style="flex-direction: column; flex-shrink: 0; flex-grow: 0; width: 16px; height: 16px; font-size: 14px; -unity-text-align: middle-center; align-self: auto; align-items: stretch;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>

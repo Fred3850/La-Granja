@@ -26,7 +26,7 @@
                 {
                     "name": "SiembraTomate",
                     "type": "Button",
-                    "id": "c33347c8-40b7-41d6-a564-98ac485bd6cb",
+                    "id": "81cdc7da-745d-4ef6-9f64-4b016f36946f",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -179,8 +179,8 @@
                 },
                 {
                     "name": "",
-                    "id": "2e5b12bc-08e5-4c36-bf36-71c4589e747e",
-                    "path": "<Keyboard>/t",
+                    "id": "09fbb642-973b-46f3-b0fb-8ff08d84aaa8",
+                    "path": "<Keyboard>/v",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

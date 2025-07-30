@@ -8,9 +8,8 @@ public class MovimientoJugador : MonoBehaviour
     public float velocidad = 5f;
     private Animator animator;
     public GameObject trigoPreFab;
-    //public GameObject tomatePreFab;//
+    public GameObject tomatePreFab;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
@@ -62,11 +61,19 @@ public class MovimientoJugador : MonoBehaviour
 
     }
 
-    
+    public void SembrarTomate(InputAction.CallbackContext contexto){
+        if(contexto.started){
+            Instantiate(tomatePreFab, transform.position, Quaternion.identity);
+        }
+
+    }
 
     public void OnTriggerEnter2D(Collider2D colision){
         if(colision.CompareTag("Huevo")){
             Destroy(colision.gameObject);
+            GameManager.instance.SumarHuevo();
+
+
             //Debug.Log("Colision con Huevo");
         }
     } 
